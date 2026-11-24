@@ -4,8 +4,8 @@ ALE 辅助出题工具当前使用的独立 Skill 分发仓库。两个目录均
 
 | Skill | 当前版本 | 适用输入 |
 | --- | --- | --- |
-| [ale-task-interviewer](skills/ale-task-interviewer/SKILL.md) | `ver0.2-ew` | input 素材与一句话任务描述，从想法开始整理题目 |
-| [ale-reference-interviewer](skills/ale-reference-interviewer/SKILL.md) | `ver0.2` | input 与 reference，任务描述可选，从已有作品反向出题 |
+| [ale-task-interviewer](skills/ale-task-interviewer/SKILL.md) | `ver0.3-ew` | input 素材与一句话任务描述，从想法开始整理题目 |
+| [ale-reference-interviewer](skills/ale-reference-interviewer/SKILL.md) | `ver0.3` | input 与 reference，任务描述可选，从已有作品反向出题 |
 
 两者主要交付 **prompt、经济价值、关键做题步骤**，由专家确认；不代替机审，不自动提交产线，也不保证审核通过。
 
@@ -24,6 +24,10 @@ git clone https://github.com/wisdom-knowledge/ale-authoring-skills.git
 然后分别安装 `skills/ale-task-interviewer` 或 `skills/ale-reference-interviewer`。
 
 ## 本次分发内容
+
+`v1.1.0` 为两个 Skill 增加独立可执行的 `scripts/export_json.py`。网页宿主模式下生成经格式校验的 `reply/draft` JSON；题目身份、版本和 HMAC 签名由网页服务添加。脚本不包含密钥，不自动提交，不改变原访谈规则。运行 `python -m unittest discover -s tests` 验证脚本。
+
+部署固定使用 Git commit 和文件 SHA256。更新 GitHub 不会改动进行中的会话；宿主需显式更新版本锁后，为新会话安装新版本。
 
 - `ale-task-interviewer`：在上游 `ver0.1` 基础上，允许在临时副本上使用宿主已安装的专业软件或可信读取库检查材料；缺少 Python 模块、预览不支持时，先核对原生软件能力，再请求必要的人工导出。保留源文件，禁止执行附件宏或脚本，不擅自安装软件、付费或接受新许可。
 - `ale-reference-interviewer`：保持上游 `ver0.2` 的功能规则。该版本已经包含原生软件读取、视觉核验及回退路径，本次不虚构新的功能修改。

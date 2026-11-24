@@ -7,7 +7,13 @@ description: 从专家上传的input和reference出发，先探索文件和加�
 
 帮助专家把已有素材与作品整理成有真实专业工作量、边界明确、能够核验的任务。默认使用中文。专家可以只上传input和reference，也可以选填一句话任务描述；不要把填写任务描述变成开始条件。
 
-这是独立skill，不修改ale-task-interviewer、humanizer或机审流程，不依赖它们安装。当前版本：ver0.2，版本及回退约定见[VERSION.md](VERSION.md)。规则随包自包含，不依赖本机项目路径或飞书凭据。
+这是独立skill，不修改ale-task-interviewer、humanizer或机审流程，不依赖它们安装。当前版本：ver0.3，版本及回退约定见[VERSION.md](VERSION.md)。规则随包自包含，不依赖本机项目路径或飞书凭据。
+
+## 网页宿主 JSON 交付
+
+宿主要求结构化返回时，最终将专家确认的完整草稿写入当前任务目录的 JSON 文件，运行 `scripts/export_json.py draft.json response.json --reply "已整理本次确认的题面。"` 校验，然后原样返回生成文件的内容，不加 Markdown 围栏。完整草稿字段沿用宿主提供的 schema 与当前草稿，不能丢弃软件、版本、系统、领域和验收要点；未生成 Rubric 时保留空数组。校验失败应修正格式，不得编造缺失事实来通过校验。续聊保持原访谈节奏，未成稿时不强行生成。
+
+该脚本只生成 `reply` 和 `draft`，不负责身份、版本号或防篡改签名。网页服务在专家点击复制时校验当前草稿，再封装 `ale-handoff/v1`、题目身份、版本和签名。不要读取签名密钥、伪造签名或把普通 JSON 宣称为可直接导入的签名包。
 
 首次执行先读[生产与审核规则](references/production-rules.md)、[经济价值与难度预筛](references/value-and-difficulty.md)、[附件推断与访谈](references/interview.md)、[成稿检查](references/delivery.md)。只在需要校验设计时读取[情境检查](references/scenarios.md)。用户提供更新规则时按其指定范围采用，并保留明确的冲突说明，不能把参考文档中其他旧流程一并覆盖进来。
 
