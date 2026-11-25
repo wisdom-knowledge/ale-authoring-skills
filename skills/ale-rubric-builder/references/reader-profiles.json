@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "python_minimum": [3, 12],
+  "packages": {
+    "Pillow": {"version": "12.3.0", "module": "PIL.Image"},
+    "PyMuPDF": {"version": "1.28.2", "module": "pymupdf"},
+    "ezdxf": {"version": "1.4.5", "module": "ezdxf"},
+    "numpy": {"version": "2.5.4", "module": "numpy"},
+    "fonttools": {"version": "4.68.0", "module": "fontTools"},
+    "pyparsing": {"version": "3.3.3", "module": "pyparsing"},
+    "typing-extensions": {"version": "4.16.0", "module": "typing_extensions"},
+    "openpyxl": {"version": "3.1.5", "module": "openpyxl"},
+    "et-xmlfile": {"version": "2.0.0", "module": "et_xmlfile"},
+    "xlrd": {"version": "2.0.2", "module": "xlrd"},
+    "python-docx": {"version": "1.2.0", "module": "docx"},
+    "lxml": {"version": "6.1.3", "module": "lxml.etree"},
+    "psd-tools": {"version": "1.26.0", "module": "psd_tools"},
+    "attrs": {"version": "26.1.0", "module": "attrs"},
+    "aggdraw": {"version": "1.4.1", "module": "aggdraw"},
+    "scipy": {"version": "1.18.1", "module": "scipy"},
+    "rhino3dm": {"version": "8.35.0", "module": "rhino3dm"},
+    "sexpdata": {"version": "1.0.2", "module": "sexpdata"}
+  },
+  "profiles": {
+    "image": ["Pillow"],
+    "pdf": ["PyMuPDF", "Pillow"],
+    "dxf": ["ezdxf", "numpy", "fonttools", "pyparsing", "typing-extensions", "PyMuPDF", "Pillow"],
+    "xlsx": ["openpyxl", "et-xmlfile"],
+    "xls": ["xlrd"],
+    "docx": ["python-docx", "lxml", "typing-extensions"],
+    "psd": ["psd-tools", "attrs", "Pillow", "numpy", "aggdraw", "scipy"],
+    "rhino": ["rhino3dm"],
+    "kicad-text": ["sexpdata"]
+  }
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "ALE Rubric 访谈助手"
+  short_description: "访谈专家核对双模型差异与题面边界，生成可转Evaluator的Rubric"
+  default_prompt: "使用 $ale-rubric-builder，根据 Query、Input、Reference 和两份 rollout 与我逐轮讨论，核对要求来源并生成完整 Rubric JSON。"
