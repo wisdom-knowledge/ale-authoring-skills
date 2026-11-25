@@ -6,6 +6,7 @@ ALE 辅助出题工具当前使用的独立 Skill 分发仓库。两个目录均
 | --- | --- | --- |
 | [ale-task-interviewer](skills/ale-task-interviewer/SKILL.md) | `ver0.3-ew` | input 素材与一句话任务描述，从想法开始整理题目 |
 | [ale-reference-interviewer](skills/ale-reference-interviewer/SKILL.md) | `ver0.3` | input 与 reference，任务描述可选，从已有作品反向出题 |
+| [ale-rubric-builder](skills/ale-rubric-builder/SKILL.md) | `ver0.1-ew` | 题面、输入、参考作品与两模型产物，生成六字段 Rubric |
 
 两者主要交付 **prompt、经济价值、关键做题步骤**，由专家确认；不代替机审，不自动提交产线，也不保证审核通过。
 
@@ -24,6 +25,9 @@ git clone https://github.com/wisdom-knowledge/ale-authoring-skills.git
 然后分别安装 `skills/ale-task-interviewer` 或 `skills/ale-reference-interviewer`。
 
 ## 本次分发内容
+
+`v1.2.0` 纳入 Rubric Skill，并提供经业务预检后输出 `ale-rubric-result/v1` 的网页适配脚本。
+三个 Skill 的网页交接均由宿主封装带版本的 `ale-handoff/v1` 并签名；普通 JSON 本身可编辑，签名用来检测修改。
 
 `v1.1.0` 为两个 Skill 增加独立可执行的 `scripts/export_json.py`。网页宿主模式下生成经格式校验的 `reply/draft` JSON；题目身份、版本和 HMAC 签名由网页服务添加。脚本不包含密钥，不自动提交，不改变原访谈规则。运行 `python -m unittest discover -s tests` 验证脚本。
 

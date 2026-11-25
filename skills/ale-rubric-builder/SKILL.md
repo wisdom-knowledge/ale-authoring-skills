@@ -5,6 +5,16 @@ description: "通过专家逐轮访谈，根据任务要求、输入资料、专
 
 # ALE Rubric 访谈助手
 
+当前网页集成版本：ver0.1-ew。修改前读取 [版本记录](VERSION.md)。
+
+## 网页宿主输出
+
+网页宿主要求结构化响应时，续聊返回 `{"reply":"本轮回复"}`。最终完成上述业务预检后，运行
+`scripts/export_json.py rubric.json response.json --review review.json --reply "Rubric 已整理，请确认。"`，原样返回生成文件，不加 Markdown 围栏。
+脚本输出 `ale-rubric-result/v1` 与原六字段数组；独立使用时仍可交付原 `rubric.json`。
+网页服务在用户导出时添加 `ale-handoff/v1`、项目/环境、UUID/talent_id、题面哈希、内容版本和 HMAC-SHA256 签名。
+不要读取签名密钥、自己生成签名、把无签名数组称为可直接导入的交接包。格式校验及签名不代表生产审核通过。
+
 与专家逐轮形成一份有任务依据、边界明确、便于实现为自动评分器的 Rubric（评分标准）。
 Evaluator 指执行这些标准的自动评分器；Judge 指借助语言或视觉模型作出判断的检查步骤。
 
