@@ -4,9 +4,9 @@ ALE 辅助出题工具当前使用的独立 Skill 分发仓库。两个目录均
 
 | Skill | 当前版本 | 适用输入 |
 | --- | --- | --- |
-| [ale-task-interviewer](skills/ale-task-interviewer/SKILL.md) | `ver0.3-ew` | input 素材与一句话任务描述，从想法开始整理题目 |
-| [ale-reference-interviewer](skills/ale-reference-interviewer/SKILL.md) | `ver0.3` | input 与 reference，任务描述可选，从已有作品反向出题 |
-| [ale-rubric-builder](skills/ale-rubric-builder/SKILL.md) | `ver0.1-ew` | 题面、输入、参考作品与两模型产物，生成六字段 Rubric |
+| [ale-task-interviewer](skills/ale-task-interviewer/SKILL.md) | `ver0.3-release01` | input 素材与一句话任务描述，从想法开始整理题目 |
+| [ale-reference-interviewer](skills/ale-reference-interviewer/SKILL.md) | `ver0.3-release01` | input 与 reference，任务描述可选，从已有作品反向出题 |
+| [ale-rubric-builder](skills/ale-rubric-builder/SKILL.md) | `ver0.3-release01` | 题面、输入、参考作品与两模型产物，生成六字段 Rubric |
 
 两者主要交付 **prompt、经济价值、关键做题步骤**，由专家确认；不代替机审，不自动提交产线，也不保证审核通过。
 

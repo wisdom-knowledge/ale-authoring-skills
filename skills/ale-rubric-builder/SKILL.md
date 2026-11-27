@@ -5,7 +5,7 @@ description: "通过专家逐轮访谈，根据任务要求、输入资料、专
 
 # ALE Rubric 访谈助手
 
-当前网页集成版本：ver0.1-ew。修改前读取 [版本记录](VERSION.md)。
+当前版本：ver0.3-release01。修改前读取 [版本记录](VERSION.md)。
 
 ## 网页宿主输出
 

@@ -7,7 +7,7 @@ description: 从专家上传的input和reference出发，先探索文件和加�
 
 帮助专家把已有素材与作品整理成有真实专业工作量、边界明确、能够核验的任务。默认使用中文。专家可以只上传input和reference，也可以选填一句话任务描述；不要把填写任务描述变成开始条件。
 
-这是独立skill，不修改ale-task-interviewer、humanizer或机审流程，不依赖它们安装。当前版本：ver0.3，版本及回退约定见[VERSION.md](VERSION.md)。规则随包自包含，不依赖本机项目路径或飞书凭据。
+这是独立skill，不修改ale-task-interviewer、humanizer或机审流程，不依赖它们安装。当前版本：ver0.3-release01，版本及回退约定见[VERSION.md](VERSION.md)。规则随包自包含，不依赖本机项目路径或飞书凭据。
 
 ## 网页宿主 JSON 交付
 
